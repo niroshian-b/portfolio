@@ -1,4 +1,6 @@
-# Portfolio Page Showcasing Me and My Projects
+# Portfolio
+
+This Project is a Custom made Portfolio Page showcasing myself and some of the other projects in my git repository
 
 ## Technologies used so far
 
