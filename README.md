@@ -1,6 +1,6 @@
 # Portfolio Page Showcasing Me and My Projects
 
-## Technologies used
+## Technologies used so far
 
 <div>
 <img src="./images/html-logo.png" height="25px" width="25px">
