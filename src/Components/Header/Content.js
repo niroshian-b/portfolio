@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Emphasis } from '../StyledComponents';
+import { Emphasis, Primary } from '../StyledComponents';
 
 const Content = () => {
 	return (
@@ -15,8 +15,12 @@ const Content = () => {
 					<div>
 						<Emphasis>location</Emphasis>: &#123;{' '}
 						<ObjectInterior>
-							<div>"city": "Toronto",</div>
-							<div>"province": "ON"</div>{' '}
+							<div>
+								<Primary>city</Primary>: "Toronto",
+							</div>
+							<div>
+								<Primary>province</Primary>: "ON"
+							</div>{' '}
 						</ObjectInterior>
 						&#125;,
 					</div>

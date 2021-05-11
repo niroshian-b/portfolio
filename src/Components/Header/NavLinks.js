@@ -22,12 +22,22 @@ const NavLinks = () => {
 				<NavLink>
 					.<Emphasis>contact</Emphasis>()
 				</NavLink>
-				<NavLink>
-					<FaGithub />
-				</NavLink>
-				<NavLink>
-					<FaLinkedin />
-				</NavLink>
+				<ExternalLink
+					target="_blank"
+					href="https://github.com/niroshian-b"
+				>
+					<NavLink>
+						<FaGithub />
+					</NavLink>
+				</ExternalLink>
+				<ExternalLink
+					target="_blank"
+					href="https://www.linkedin.com/in/niro-b/"
+				>
+					<NavLink>
+						<FaLinkedin />
+					</NavLink>
+				</ExternalLink>
 			</NavList>
 		</Wrapper>
 	);
@@ -47,6 +57,7 @@ const NavLink = styled.li`
 	display: inline-block;
 
 	padding: 0.75em 0.75em;
+	color: var(--text-color);
 
 	&:hover {
 		cursor: pointer;
@@ -72,6 +83,11 @@ const NavLink = styled.li`
 		visibility: visible;
 		width: 100%;
 	}
+`;
+
+const ExternalLink = styled.a`
+	color: var(emphasis-color);
+	text-decoration: none;
 `;
 
 export default NavLinks;
