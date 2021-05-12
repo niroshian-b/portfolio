@@ -50,16 +50,39 @@ const DropdownLinks = () => {
 
 const Wrapper = styled.div``;
 
-const DropdownList = styled.ul``;
+const DropdownList = styled.ul`
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: repeat(5, 7em);
+	text-align: center;
+`;
 
 const DropdownLink = styled.li`
-	padding: 0.75em 0.75em;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	width: 100%;
+	padding: 60px;
+
 	color: var(--text-color);
 	border-bottom: 1px solid transparent;
+	font-size: 1.75rem;
+
+	cursor: pointer;
+
+	&:hover {
+		color: var(--primary-color);
+		transition: 0.2 ease-in-out;
+	}
 `;
 
 const ExternalLink = styled.a`
-	color: var(emphasis-color);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	color: var(--text-color);
 	text-decoration: none;
 `;
 
