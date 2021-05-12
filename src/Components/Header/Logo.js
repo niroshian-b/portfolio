@@ -8,16 +8,16 @@ import { Emphasis } from '../StyledComponents';
 
 const Logo = () => {
 	return (
-		<Wrapper to="/">
+		<NavLink to="/">
 			<Icon />
 			Devs.<Emphasis>Niro</Emphasis>
-		</Wrapper>
+		</NavLink>
 	);
 };
 
 export default Logo;
 
-const Wrapper = styled(Link)`
+const NavLink = styled(Link)`
 	display: flex;
 	align-items: center;
 	cursor: pointer;

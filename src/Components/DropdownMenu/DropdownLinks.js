@@ -4,99 +4,58 @@ import { Link } from 'react-scroll';
 import { Emphasis } from '../StyledComponents';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 
-const NavLinks = () => {
+const DropdownLinks = () => {
 	return (
 		<Wrapper>
-			<NavList>
-				<NavLink>
+			<DropdownList>
+				<DropdownLink>
 					<Link to="about">
 						.<Emphasis>about</Emphasis>()
 					</Link>
-				</NavLink>
+				</DropdownLink>
 				{/* BLOG WILL BE ADDED LATER */}
-				{/* <NavLink> */}
+				{/* <DropdownLink> */}
 				{/* .<Emphasis>blog</Emphasis>() */}
-				{/* </NavLink> */}
-				<NavLink>
+				{/* </DropdownLink> */}
+				<DropdownLink>
 					<Link to="projects">
 						.<Emphasis>projects</Emphasis>()
 					</Link>
-				</NavLink>
-				<NavLink>
+				</DropdownLink>
+				<DropdownLink>
 					<Link to="contact">
 						.<Emphasis>contact</Emphasis>()
 					</Link>
-				</NavLink>
+				</DropdownLink>
 				<ExternalLink
 					target="_blank"
 					href="https://github.com/niroshian-b"
 				>
-					<NavLink>
+					<DropdownLink>
 						<FaGithub />
-					</NavLink>
+					</DropdownLink>
 				</ExternalLink>
 				<ExternalLink
 					target="_blank"
 					href="https://www.linkedin.com/in/niro-b/"
 				>
-					<NavLink>
+					<DropdownLink>
 						<FaLinkedin />
-					</NavLink>
+					</DropdownLink>
 				</ExternalLink>
-			</NavList>
+			</DropdownList>
 		</Wrapper>
 	);
 };
 
-const Wrapper = styled.div`
-	display: none;
+const Wrapper = styled.div``;
 
-	@media screen and (min-width: 768px) {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	}
-`;
+const DropdownList = styled.ul``;
 
-const NavList = styled.ul`
-	list-style-type: none;
-`;
-
-const NavLink = styled.li`
-	display: inline-block;
-
+const DropdownLink = styled.li`
 	padding: 0.75em 0.75em;
 	color: var(--text-color);
 	border-bottom: 1px solid transparent;
-
-	&:hover {
-		cursor: pointer;
-		color: var(--primary-color);
-	}
-
-	/* animation for NavLink */
-	position: relative;
-
-	&:before {
-		content: '';
-		position: absolute;
-		width: 0;
-		height: 2px;
-		bottom: 0;
-		left: 0;
-		background-color: var(--primary-color);
-		visibility: hidden;
-		transition: all 0.3s ease-in-out;
-	}
-
-	&:hover:before {
-		visibility: visible;
-		width: 100%;
-	}
-
-	&:active {
-		color: var(--primary-color);
-	}
 `;
 
 const ExternalLink = styled.a`
@@ -104,4 +63,4 @@ const ExternalLink = styled.a`
 	text-decoration: none;
 `;
 
-export default NavLinks;
+export default DropdownLinks;

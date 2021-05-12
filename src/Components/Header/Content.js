@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-scroll';
 import { Emphasis, Primary } from '../StyledComponents';
 
 const Content = () => {
@@ -19,8 +20,11 @@ const Content = () => {
 								<Primary>city</Primary>: "Toronto",
 							</div>
 							<div>
-								<Primary>province</Primary>: "ON"
-							</div>{' '}
+								<Primary>province</Primary>: "ON",
+							</div>
+							<div>
+								<Primary>country</Primary>: "Canada"
+							</div>
 						</ObjectInterior>
 						&#125;,
 					</div>
@@ -28,7 +32,7 @@ const Content = () => {
 						<Emphasis>summary</Emphasis>: ["Full-Stack Web
 						Developer", "Gamer", "Puzzle Enthusiast"],
 					</div>
-					See More...
+					<ScrollLink>See More...</ScrollLink>
 				</ObjectInterior>
 				<div>&#125;</div>
 			</Text>
@@ -50,5 +54,10 @@ const Text = styled.div`
 
 const ObjectInterior = styled.div`
 	margin-left: 1em;
+`;
+
+const ScrollLink = styled(Link)`
+	color: var(--primary-color);
+	cursor: pointer;
 `;
 export default Content;
