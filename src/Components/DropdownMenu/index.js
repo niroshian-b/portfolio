@@ -3,10 +3,10 @@ import styled from 'styled-components';
 import { FaMinus } from 'react-icons/fa';
 import DropdownLinks from './DropdownLinks';
 
-const DropdownMenu = () => {
+const DropdownMenu = ({ isOpen, toggleIsOpen }) => {
 	return (
-		<DropdownContainer>
-			<CloseIcon>
+		<DropdownContainer isOpen={isOpen}>
+			<CloseIcon onClick={toggleIsOpen}>
 				<FaMinus />
 			</CloseIcon>
 			<DropdownLinks />
@@ -25,9 +25,8 @@ const DropdownContainer = styled.aside`
 	top: 0;
 	left: 0;
 	transition: 0.3s ease-in-out;
-	/* opacity: ${({ isOpen }) => (isOpen ? '100%' : '0')}; */
-	/* top: ${({ isOpen }) => (isOpen ? '0' : '-100%')}; */
-	top: 0;
+	opacity: ${({ isOpen }) => (isOpen ? '100%' : '0')};
+	top: ${({ isOpen }) => (isOpen ? '0' : '-100%')};
 `;
 
 const CloseIcon = styled.div`
@@ -37,6 +36,10 @@ const CloseIcon = styled.div`
 	background: transparent;
 	font-size: 2rem;
 	cursor: pointer;
+
+	&:hover {
+		color: var(--primary-color);
+	}
 `;
 
 export default DropdownMenu;

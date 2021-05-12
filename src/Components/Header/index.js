@@ -7,14 +7,14 @@ import NavLinks from './NavLinks';
 
 import { FaBars } from 'react-icons/fa';
 
-const Header = () => {
+const Header = ({ isOpen, toggleIsOpen }) => {
 	return (
 		<HeaderWrapper>
 			<NavBar>
 				<h1>
 					<Logo />
 				</h1>
-				<MobileIcon>
+				<MobileIcon onClick={toggleIsOpen}>
 					<FaBars />
 				</MobileIcon>
 				<NavLinks />
@@ -56,6 +56,10 @@ const MobileIcon = styled.div`
 	transform: translate(-100%, 60%);
 	font-size: 1.8rem;
 	cursor: pointer;
+
+	&:hover {
+		color: var(--primary-color);
+	}
 
 	@media screen and (min-width: 768px) {
 		display: none;
