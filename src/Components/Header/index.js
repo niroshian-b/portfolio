@@ -36,7 +36,7 @@ const NavBar = styled.nav`
 	align-items: center;
 	justify-content: space-between;
 
-	background: var(--accent-background-color);
+	background: var(--background-color);
 
 	position: fixed;
 	top: 0px;

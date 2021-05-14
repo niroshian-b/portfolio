@@ -1,7 +1,12 @@
 import React from 'react';
+import InfoSection from './InfoSection';
 
 const Home = () => {
-	return <div>Home!</div>;
+	return (
+		<>
+			<InfoSection />
+		</>
+	);
 };
 
 export default Home;

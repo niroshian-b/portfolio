@@ -21,7 +21,7 @@ export default createGlobalStyle`
 
 body {
     font-family: 'Source Code Pro', monospace;
-    background: var(--background-color);
+    background: var(--accent-background-color);
     color: var(--text-color);
 }
 
