@@ -32,7 +32,7 @@ const Content = () => {
 						<Emphasis>summary</Emphasis>: ["Full-Stack Web
 						Developer", "Gamer", "Puzzle Enthusiast"],
 					</div>
-					<ScrollLink>See More...</ScrollLink>
+					<ScrollLink to="about">See More...</ScrollLink>
 				</ObjectInterior>
 				<div>&#125;</div>
 			</Text>

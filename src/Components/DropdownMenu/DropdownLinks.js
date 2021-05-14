@@ -4,12 +4,12 @@ import { Link } from 'react-scroll';
 import { Emphasis } from '../StyledComponents';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 
-const DropdownLinks = () => {
+const DropdownLinks = ({ toggleIsOpen }) => {
 	return (
 		<Wrapper>
 			<DropdownList>
 				<DropdownLink>
-					<Link to="about">
+					<Link to="about" onClick={toggleIsOpen}>
 						.<Emphasis>about</Emphasis>()
 					</Link>
 				</DropdownLink>
@@ -18,18 +18,19 @@ const DropdownLinks = () => {
 				{/* .<Emphasis>blog</Emphasis>() */}
 				{/* </DropdownLink> */}
 				<DropdownLink>
-					<Link to="projects">
+					<Link to="projects" onClick={toggleIsOpen}>
 						.<Emphasis>projects</Emphasis>()
 					</Link>
 				</DropdownLink>
 				<DropdownLink>
-					<Link to="contact">
+					<Link to="contact" onClick={toggleIsOpen}>
 						.<Emphasis>contact</Emphasis>()
 					</Link>
 				</DropdownLink>
 				<ExternalLink
 					target="_blank"
 					href="https://github.com/niroshian-b"
+					onClick={toggleIsOpen}
 				>
 					<DropdownLink>
 						<FaGithub />
@@ -38,6 +39,7 @@ const DropdownLinks = () => {
 				<ExternalLink
 					target="_blank"
 					href="https://www.linkedin.com/in/niro-b/"
+					onClick={toggleIsOpen}
 				>
 					<DropdownLink>
 						<FaLinkedin />

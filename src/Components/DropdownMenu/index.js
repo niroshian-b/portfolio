@@ -9,7 +9,7 @@ const DropdownMenu = ({ isOpen, toggleIsOpen }) => {
 			<CloseIcon onClick={toggleIsOpen}>
 				<FaMinus />
 			</CloseIcon>
-			<DropdownLinks />
+			<DropdownLinks toggleIsOpen={toggleIsOpen} />
 		</DropdownContainer>
 	);
 };
