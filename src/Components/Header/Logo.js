@@ -1,14 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { Link } from 'react-router-dom';
+import { animateScroll } from 'react-scroll';
 
 import { FiHardDrive } from 'react-icons/fi';
 import { Emphasis } from '../StyledComponents';
 
 const Logo = () => {
+	const scrollTop = () => {
+		animateScroll.scrollToTop();
+	};
+
 	return (
-		<NavLink to="/">
+		<NavLink onClick={scrollTop}>
 			<Icon />
 			Devs.<Emphasis>Niro</Emphasis>
 		</NavLink>
@@ -17,7 +21,7 @@ const Logo = () => {
 
 export default Logo;
 
-const NavLink = styled(Link)`
+const NavLink = styled.div`
 	display: flex;
 	align-items: center;
 	cursor: pointer;

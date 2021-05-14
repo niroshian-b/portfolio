@@ -41,6 +41,7 @@ const NavBar = styled.nav`
 	position: fixed;
 	top: 0px;
 
+	min-height: 80px;
 	width: 100%;
 
 	padding: 0.875em 1em;
