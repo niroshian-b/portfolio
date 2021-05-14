@@ -32,7 +32,16 @@ const Content = () => {
 						<Emphasis>summary</Emphasis>: ["Full-Stack Web
 						Developer", "Gamer", "Puzzle Enthusiast"],
 					</div>
-					<ScrollLink to="about">See More...</ScrollLink>
+					<ScrollLink
+						to="about"
+						smooth={true}
+						duration={500}
+						spy={true}
+						exact="true"
+						offset={-80}
+					>
+						See More...
+					</ScrollLink>
 				</ObjectInterior>
 				<div>&#125;</div>
 			</Text>
@@ -46,7 +55,7 @@ const Wrapper = styled.div`
 	align-items: center;
 	justify-content: center;
 
-	height: 100%;
+	min-height: 100%;
 `;
 const Text = styled.div`
 	margin: 20px;

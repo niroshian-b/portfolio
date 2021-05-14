@@ -9,21 +9,47 @@ const NavLinks = () => {
 		<Wrapper>
 			<NavList>
 				<NavLink>
-					<Link to="about">
+					<Link
+						to="about"
+						smooth={true}
+						duration={500}
+						spy={true}
+						exact="true"
+						offset={-80}
+					>
 						.<Emphasis>about</Emphasis>()
 					</Link>
 				</NavLink>
-				{/* BLOG WILL BE ADDED LATER */}
-				{/* <NavLink> */}
+				{/* BLOG CAN BE ADDED LATER */}
+				{/* <NavLink to="blogPosts" 
+						smooth={true}
+						duration={500}
+						spy={true}
+						exact="true"
+						offset={-80}> */}
 				{/* .<Emphasis>blog</Emphasis>() */}
 				{/* </NavLink> */}
 				<NavLink>
-					<Link to="projects">
+					<Link
+						to="projects"
+						smooth={true}
+						duration={500}
+						spy={true}
+						exact="true"
+						offset={-80}
+					>
 						.<Emphasis>projects</Emphasis>()
 					</Link>
 				</NavLink>
 				<NavLink>
-					<Link to="contact">
+					<Link
+						to="contact"
+						smooth={true}
+						duration={500}
+						spy={true}
+						exact="true"
+						offset={-80}
+					>
 						.<Emphasis>contact</Emphasis>()
 					</Link>
 				</NavLink>
@@ -81,7 +107,7 @@ const NavLink = styled.li`
 		content: '';
 		position: absolute;
 		width: 0;
-		height: 2px;
+		min-height: 2px;
 		bottom: 0;
 		left: 0;
 		background-color: var(--primary-color);

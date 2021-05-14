@@ -8,10 +8,8 @@ const InfoSection = () => {
 				<InfoRow>
 					<ImgCol>
 						<ImgWrap>
-							<Img
-								src="/assets/css-logo.png"
-								alt="javascript pic"
-							></Img>
+							{/* WILL CHANGE TO IMAGES SHOWCASING MYSELF */}
+							<Img src="/assets/css-logo.png" alt="css pic"></Img>
 						</ImgWrap>
 					</ImgCol>
 					<TextCol>
@@ -21,15 +19,15 @@ const InfoSection = () => {
 							<TextBody>
 								Recent full-stack development graduate who has a
 								love for programming and is known for being
-								reliable. I started programming in 6th grade and
-								have found it's changed the way I look at
-								problems with a logical flow. I'm passionate
-								about this work because I love small victories
-								and solving puzzles. I'm changing careers from
-								specializing in retail sales, which means I can
-								work well under pressure and I’m used to
-								continually learning about new products,
-								technologies, and standards in my industry.
+								reliable. Started programming in 6th grade and
+								has found it's changed the way he analyzes
+								problems with a logical flow. Loves solving
+								logical puzzles and shows passion for learning
+								anything new. Changing careers from specializing
+								in retail sales, helps him work well under
+								pressure while continually learning about new
+								products, technologies, and standards in the
+								industry.
 							</TextBody>
 						</TextWrapper>
 					</TextCol>
@@ -52,7 +50,7 @@ const InfoContainer = styled.section`
 const InfoWrapper = styled.div`
 	display: grid;
 	z-index: 1;
-	height: 900px;
+	min-height: 900px;
 	width: 100%;
 	max-width: 1100px;
 	margin: 0 auto;
@@ -67,7 +65,7 @@ export const InfoRow = styled.div`
 	grid-template-areas: 'col1 col2';
 
 	@media screen and (max-width: 768px) {
-		grid-template-areas: 'col1 col1' 'col2 col2';
+		grid-template-areas: 'col1' 'col2';
 	}
 `;
 
@@ -117,7 +115,7 @@ export const TextBody = styled.p`
 
 export const ImgWrap = styled.div`
 	max-width: 550px;
-	height: 100%;
+	min-height: 100%;
 `;
 
 export const Img = styled.img`
