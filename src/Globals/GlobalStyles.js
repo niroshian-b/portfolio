@@ -12,7 +12,9 @@ export default createGlobalStyle`
 
 }
 
-* {
+*, 
+*::before, 
+*::after {
     /* CSS RESET */
     margin: 0;
     padding: 0;

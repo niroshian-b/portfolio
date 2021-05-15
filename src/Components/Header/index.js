@@ -28,6 +28,7 @@ const HeaderWrapper = styled.header`
 	height: 100vh;
 
 	position: relative;
+	z-index: 100;
 `;
 
 const NavBar = styled.nav`
