@@ -5,13 +5,15 @@ const ProjectCard = () => {
 	return (
 		<CardWrapper>
 			<CardContent>
-				<ProjectTitle>Pass The Dishes</ProjectTitle>
+				<ProjectTitle className="project-title">
+					Pass The Dishes
+				</ProjectTitle>
 				<ProjectDescription>
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
 					feugiat dolor nulla, sed suscipit lacus viverra sit amet.
 					Mauris.
 				</ProjectDescription>
-				<ProjectLink href="#">Read More</ProjectLink>
+				<ProjectLink href="#">See More</ProjectLink>
 			</CardContent>
 		</CardWrapper>
 	);
@@ -34,7 +36,8 @@ const CardWrapper = styled.div`
 
 	transition: transform 500ms ease;
 
-	&:hover {
+	&:hover,
+	&:focus-within {
 		transform: scale(1.05);
 	}
 `;
@@ -44,15 +47,44 @@ const CardContent = styled.div`
 	padding: var(--padding);
 	background: linear-gradient(
 		hsl(0 0% 0% / 0),
-		hsl(20 0% 0% / 0.2) 10%,
+		hsl(20 0% 0% / 0.5) 10%,
 		hsl(0 0% 0% / 1)
 	);
+
+	transform: translateY(75%);
+	transition: transform 500ms ease;
+
+	${CardWrapper}:hover &, ${CardWrapper}:focus-within & {
+		transform: translateY(0);
+		transition-delay: 500ms;
+	}
+
+	${CardWrapper}:focus-within & {
+		transition-duration: 0ms;
+	}
+
+	& > *:not(.project-title) {
+		opacity: 0;
+		transition: opacity 500ms ease;
+	}
+
+	${CardWrapper}:hover & > *:not(.project-title),
+	${CardWrapper}:focus-within & > *:not(.project-title) {
+		opacity: 1;
+		transition-delay: 750ms;
+	}
+
+	${CardWrapper}:focus-within & > *:not(.project-title) {
+		transition-delay: 250ms;
+	}
 `;
 
 const ProjectTitle = styled.h2`
 	position: relative;
 	margin-bottom: 10px;
 	max-width: max-content;
+	text-shadow: 4px 4px 8px black;
+
 	&:after {
 		content: '';
 		position: absolute;
@@ -67,7 +99,8 @@ const ProjectTitle = styled.h2`
 		transition: transform 500ms ease;
 	}
 
-	${CardWrapper}:hover &:after {
+	${CardWrapper}:hover &:after,
+	${CardWrapper}:focus-within &:after {
 		transform: scaleX(1);
 	}
 `;
