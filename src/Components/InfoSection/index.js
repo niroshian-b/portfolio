@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import devImg from '../../images/app-dev.svg';
 
 const InfoSection = () => {
 	return (
@@ -9,7 +10,7 @@ const InfoSection = () => {
 					<ImgCol>
 						<ImgWrap>
 							{/* WILL CHANGE TO IMAGES SHOWCASING MYSELF */}
-							<Img src="/assets/css-logo.png" alt="css pic"></Img>
+							<Img src={devImg} alt="app-development"></Img>
 						</ImgWrap>
 					</ImgCol>
 					<TextCol>

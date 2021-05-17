@@ -1,19 +1,24 @@
 import React from 'react';
 import styled from 'styled-components';
-
-const ProjectCard = () => {
+// {
+// title: 'Project Title',
+// desc: 'Project Description',
+// techUsed: ['List', 'of', 'Strings', 'of', 'Technology', 'Used'],
+// img: require('path to img'),
+// link: 'link to live project or github repo',
+// }
+const ProjectCard = ({ title, desc, techUsed, img, link }) => {
 	return (
-		<CardWrapper>
+		<CardWrapper style={{ backgroundImage: `url(${img})` }}>
 			<CardContent>
-				<ProjectTitle className="project-title">
-					Pass The Dishes
-				</ProjectTitle>
-				<ProjectDescription>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-					feugiat dolor nulla, sed suscipit lacus viverra sit amet.
-					Mauris.
-				</ProjectDescription>
-				<ProjectLink href="#">See More</ProjectLink>
+				<ProjectTitle className="project-title">{title}</ProjectTitle>
+				<ProjectDescription>{desc}</ProjectDescription>
+				<ProjectTech>
+					Technology used: {techUsed.map((tech) => `${tech}, `)}
+				</ProjectTech>
+				<ProjectLink target="_blank" href={link}>
+					See More
+				</ProjectLink>
 			</CardContent>
 		</CardWrapper>
 	);
@@ -23,7 +28,6 @@ export default ProjectCard;
 
 const CardWrapper = styled.div`
 	color: var(--text-color);
-	background-image: url('/assets/PassTheDishes-Capture.jpg');
 	background-color: var(--background-color);
 	background-blend-mode: lighten;
 	background-size: cover;
@@ -47,7 +51,7 @@ const CardContent = styled.div`
 	padding: var(--padding);
 	background: linear-gradient(
 		hsl(0 0% 0% / 0),
-		hsl(20 0% 0% / 0.5) 10%,
+		hsl(20 0% 0% / 0.5) 5%,
 		hsl(0 0% 0% / 1)
 	);
 
@@ -84,6 +88,7 @@ const ProjectTitle = styled.h2`
 	margin-bottom: 10px;
 	max-width: max-content;
 	text-shadow: 4px 4px 8px black;
+	text-transform: capitalize;
 
 	&:after {
 		content: '';
@@ -106,6 +111,11 @@ const ProjectTitle = styled.h2`
 `;
 
 const ProjectDescription = styled.p``;
+
+const ProjectTech = styled.p`
+	font-weight: bold;
+	margin-top: 5px;
+`;
 
 const ProjectLink = styled.a`
 	cursor: pointer;

@@ -2,12 +2,15 @@ import React from 'react';
 import styled from 'styled-components';
 
 import ProjectCard from './ProjectCard';
+import ProjectData from './ProjectData';
 
 const ProjectsSection = () => {
 	return (
 		<ProjectsContainer id="projects">
 			<ProjectsWrapper>
-				<ProjectCard />
+				{ProjectData.map((project) => (
+					<ProjectCard {...project} />
+				))}
 			</ProjectsWrapper>
 		</ProjectsContainer>
 	);
@@ -25,11 +28,10 @@ const ProjectsContainer = styled.section`
 
 const ProjectsWrapper = styled.div`
 	display: grid;
+	column-gap: 2rem;
+	row-gap: 3rem;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 	z-index: 1;
 	min-height: 900px;
-	width: 100%;
-	max-width: 1100px;
-	margin: 0 auto;
-	padding: 0 1.5rem;
 	place-items: center;
 `;

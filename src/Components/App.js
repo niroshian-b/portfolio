@@ -21,11 +21,8 @@ const App = () => {
 				<Header isOpen={isOpen} toggleIsOpen={toggleIsOpen} />
 				<DropdownMenu isOpen={isOpen} toggleIsOpen={toggleIsOpen} />
 				<Switch>
-					<Route exact path="/">
+					<Route path="/">
 						<Home />
-					</Route>
-					<Route path={['/error', '']}>
-						<Error />
 					</Route>
 				</Switch>
 				<Footer />
