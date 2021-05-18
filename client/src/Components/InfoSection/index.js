@@ -56,7 +56,7 @@ const InfoWrapper = styled.div`
 	max-width: 1100px;
 	margin: 0 auto;
 	padding: 0 1.5rem;
-	justify-content: center;
+	place-items: center;
 `;
 
 export const InfoRow = styled.div`

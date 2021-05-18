@@ -129,13 +129,10 @@ const ProjectLink = styled.a`
 	margin: 1em 0;
 	border-radius: 0.25rem;
 
-	transition: background-color 500ms ease;
+	transition: all 500ms ease;
 
 	&:hover {
 		background-color: var(--accent-background-color);
 		color: var(--primary-color);
-	}
-
-	&:focus {
 	}
 `;
