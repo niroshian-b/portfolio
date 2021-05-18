@@ -1,0 +1,11 @@
+{
+	"name": "server",
+	"version": "1.0.0",
+	"description": "Server Package for Portfolio Page.",
+	"main": "server.js",
+	"author": "Niroshian Balasubramaniam",
+	"license": "MIT",
+	"dependencies": {
+		"express": "^4.17.1"
+	}
+}
