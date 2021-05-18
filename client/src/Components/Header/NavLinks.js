@@ -49,6 +49,7 @@ const NavLinks = () => {
 						spy={true}
 						exact="true"
 						offset={-80}
+						activeClass="active"
 					>
 						.<Emphasis>contact</Emphasis>()
 					</Link>
@@ -120,7 +121,7 @@ const NavLink = styled.li`
 		width: 100%;
 	}
 
-	&:active {
+	& .active {
 		color: var(--primary-color);
 	}
 `;

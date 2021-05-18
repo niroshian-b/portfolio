@@ -4,7 +4,6 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Header from './Header';
 import Home from './Home';
 import Error from './Error';
-import Footer from './Footer';
 import DropdownMenu from './DropdownMenu';
 
 const App = () => {
@@ -25,7 +24,6 @@ const App = () => {
 						<Home />
 					</Route>
 				</Switch>
-				<Footer />
 			</div>
 		</BrowserRouter>
 	);
