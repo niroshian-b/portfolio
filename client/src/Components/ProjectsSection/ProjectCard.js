@@ -29,7 +29,7 @@ export default ProjectCard;
 const CardWrapper = styled.div`
 	color: var(--text-color);
 	background-color: var(--background-color);
-	background-blend-mode: lighten;
+	opacity: 0.8;
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -42,6 +42,7 @@ const CardWrapper = styled.div`
 
 	&:hover,
 	&:focus-within {
+		opacity: 1;
 		transform: scale(1.05);
 	}
 `;
@@ -129,10 +130,13 @@ const ProjectLink = styled.a`
 	margin: 1em 0;
 	border-radius: 0.25rem;
 
-	transition: all 500ms ease;
+	transition: background-color 500ms ease;
 
 	&:hover {
 		background-color: var(--accent-background-color);
 		color: var(--primary-color);
+	}
+
+	&:focus {
 	}
 `;

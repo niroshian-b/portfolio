@@ -3,7 +3,6 @@ import GlobalStyles from '../Globals/GlobalStyles';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Header from './Header';
 import Home from './Home';
-import Error from './Error';
 import DropdownMenu from './DropdownMenu';
 
 const App = () => {

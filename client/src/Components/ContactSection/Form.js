@@ -43,14 +43,22 @@ const FormWrapper = styled.div`
 	border: 10px solid var(--emphasis-color);
 	background-color: var(--accent-background-color);
 	padding: 80px 100px;
+
+	@media screen and (max-width: 768px) {
+		padding: 20px 40px;
+	}
 `;
 const ContactForm = styled.form``;
 
 const FormHeading = styled.h3`
 	text-transform: uppercase;
-	font-size: 45px;
+	font-size: 3rem;
 	text-align: center;
 	margin-bottom: 0.75rem;
+
+	@media screen and (max-width: 480px) {
+		font-size: 2rem;
+	}
 `;
 
 const SubText = styled.p`
@@ -62,7 +70,7 @@ const SubText = styled.p`
 const FormGroup = styled.div`
 	position: relative;
 	height: 75px;
-	margin-bottom: 1rem;
+	margin: 1rem 0;
 	overflow: hidden;
 `;
 
