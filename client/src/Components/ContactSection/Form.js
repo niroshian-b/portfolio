@@ -1,10 +1,51 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
+import axios from 'axios';
 
 const Form = () => {
+	//states to store form information
+	const [sender, setSender] = useState('');
+	const [email, setEmail] = useState('');
+	const [message, SetMessage] = useState('');
+
+	const resetForm = () => {
+		//function to reset Form after sending email
+		setSender('');
+		setEmail('');
+		SetMessage('');
+	};
+
+	const handleSubmit = (e) => {
+		//function to handle post request using our own express server
+		e.preventDefault();
+
+		axios({
+			method: 'POST',
+			url: 'http://localhost:5000/email/send',
+			data: {
+				sender,
+				email,
+				message,
+			},
+		})
+			.then((response) => {
+				if (response.data.status === 200) {
+					alert('Message Sent.');
+					resetForm();
+				} else {
+					alert('Message failed to send.');
+					console.log(response);
+				}
+			})
+			.catch((err) => {
+				alert('Message failed to send.');
+				console.error(err);
+			});
+	};
+
 	return (
 		<FormWrapper>
-			<ContactForm>
+			<ContactForm onSubmit={(e) => handleSubmit(e)} autoComplete="off">
 				<FormHeading>Contact Niro</FormHeading>
 				<SubText>
 					If you have any inquiries or requests feel free to contact
@@ -12,19 +53,39 @@ const Form = () => {
 				</SubText>
 
 				<FormGroup>
-					<Input type="text" id="fullName" name="fullName" required />
+					<Input
+						type="text"
+						id="fullName"
+						name="fullName"
+						value={sender}
+						onChange={(e) => setSender(e.target.value)}
+						required
+					/>
 					<Label htmlFor="fullName">
 						<ContentName>Name</ContentName>
 					</Label>
 				</FormGroup>
 				<FormGroup>
-					<Input type="email" id="email" name="email" required />
+					<Input
+						type="email"
+						id="email"
+						name="email"
+						value={email}
+						onChange={(e) => setEmail(e.target.value)}
+						required
+					/>
 					<Label htmlFor="email">
 						<ContentName>Email Address</ContentName>
 					</Label>
 				</FormGroup>
 				<FormGroup>
-					<Input name="message" type="text" required />
+					<Input
+						name="message"
+						type="text"
+						value={message}
+						onChange={(e) => SetMessage(e.target.value)}
+						required
+					/>
 					<Label htmlFor="message">
 						<ContentName>Message</ContentName>
 					</Label>
