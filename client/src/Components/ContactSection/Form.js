@@ -29,7 +29,8 @@ const Form = () => {
 			},
 		})
 			.then((response) => {
-				if (response.data.status === 200) {
+				console.log(response);
+				if (response.status === 200) {
 					alert('Message Sent.');
 					resetForm();
 				} else {

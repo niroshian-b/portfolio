@@ -8,8 +8,8 @@ const ProjectsSection = () => {
 	return (
 		<ProjectsContainer id="projects">
 			<ProjectsWrapper>
-				{ProjectData.map((project) => (
-					<ProjectCard {...project} />
+				{ProjectData.map((project, index) => (
+					<ProjectCard key={index} {...project} />
 				))}
 			</ProjectsWrapper>
 		</ProjectsContainer>
