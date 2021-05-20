@@ -12,11 +12,6 @@ app.use(cors());
 app.use(express.json());
 app.use('/', router);
 
-//check if dotenv failed
-if (dotenv.error) {
-	throw dotenv.error;
-}
-
 //Create nodemailer transporter object
 let transporter = nodemailer.createTransport({
 	service: 'gmail',
