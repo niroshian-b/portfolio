@@ -21,7 +21,7 @@ const Form = () => {
 
 		axios({
 			method: 'POST',
-			url: 'http://localhost:5000/email/send',
+			url: `http://localhost:${process.env.PORT || 5000}/email/send`,
 			data: {
 				sender,
 				email,
