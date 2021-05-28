@@ -14,7 +14,13 @@ const ProjectCard = ({ title, desc, techUsed, img, link }) => {
 				<ProjectTitle className="project-title">{title}</ProjectTitle>
 				<ProjectDescription>{desc}</ProjectDescription>
 				<ProjectTech>
-					Technology used: {techUsed.map((tech) => `${tech}, `)}
+					Technology used:{' '}
+					{techUsed.map((tech, index) => {
+						if (index === techUsed.length - 1) {
+							return `${tech}`;
+						}
+						return `${tech}, `;
+					})}
 				</ProjectTech>
 				<ProjectLink target="_blank" href={link}>
 					See More
