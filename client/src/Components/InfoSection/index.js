@@ -18,7 +18,7 @@ const InfoSection = () => {
 							<TopLine>Niro</TopLine>
 							<Heading>.about()</Heading>
 							<TextBody>
-								Recent full-stack development graduate who has a
+								Full-stack Web Developer who has a
 								love for programming and is known for being
 								reliable. Started programming in 6th grade and
 								has found it's changed the way he analyzes
